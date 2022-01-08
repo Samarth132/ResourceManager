@@ -10,7 +10,7 @@ async function addSemester(req,res){
     try {
         newSem = await pool.query('INSERT INTO semesters (semId, deptId, semName) VALUES($1,$2,$3)', [semId, deptId, semName])
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(newSem){
@@ -24,7 +24,7 @@ async function fetchSemester(req,res){
     try {
         allSem = await pool.query('SELECT * FROM semesters')
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(allSem){
@@ -39,7 +39,7 @@ async function upSemester(req,res){
     try {
         upSem = await pool.query(`UPDATE semesters SET semName = ${semName} WHERE semId = ${semId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(upSem){
@@ -54,7 +54,7 @@ async function delSemester(req,res){
     try {
         delSem = await pool.query(`DELETE FROM semesters WHERE semId = ${semId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(delSem){

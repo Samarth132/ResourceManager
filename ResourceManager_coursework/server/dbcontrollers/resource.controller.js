@@ -11,7 +11,7 @@ async function addResource(req,res){
         newRes = await pool.query('INSERT INTO resources (resId, deptId, resName, resLink, resDesc) VALUES($1,$2,$3,$4,$5)',
         [resId, deptId, resName, resLink, resDesc])
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(newRes){
@@ -25,7 +25,7 @@ async function fetchResource(req,res){
     try {
         allRes = await pool.query('SELECT * FROM resources')
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(allRes){
@@ -40,7 +40,7 @@ async function upResource(req,res){
     try {
         upRes = await pool.query(`UPDATE resources SET resName = ${resName} WHERE resId = ${resId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(upRes){
@@ -55,7 +55,7 @@ async function delResource(req,res){
     try {
         delRes = await pool.query(`DELETE FROM resources WHERE resId = ${resId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(delRes){

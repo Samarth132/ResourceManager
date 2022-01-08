@@ -7,12 +7,12 @@ const {
     delSemester
 } = require('../dbcontrollers/semester.controller')
 
-router.get('/postSem',addSemester)
+router.post('/postSem',addSemester)
 
 router.get('/getSem',fetchSemester)
 
-router.get('/putSem',upSemester)
+router.put('/putSem',upSemester)
 
-router.get('/delSem',delSemester)
+router.delete('/delSem',delSemester)
 
 module.exports = router

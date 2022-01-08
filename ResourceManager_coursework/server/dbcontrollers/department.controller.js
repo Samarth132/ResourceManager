@@ -10,7 +10,7 @@ async function addDepartment(req,res){
     try {
         newDept = await pool.query('INSERT INTO departments (deptId, deptName) VALUES($1,$2)', [deptId, deptName])
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(newDept){
@@ -24,7 +24,7 @@ async function fetchDepartment(req,res){
     try {
         allDept = await pool.query('SELECT * FROM departments')
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(allDept){
@@ -39,7 +39,7 @@ async function upDepartment(req,res){
     try {
         upDept = await pool.query(`UPDATE departments SET deptName = ${deptName} WHERE deptId = ${deptId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(upDept){
@@ -54,7 +54,7 @@ async function delDepartment(req,res){
     try {
         delDept = await pool.query(`DELETE FROM departments WHERE deptId = ${deptId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(delDept){

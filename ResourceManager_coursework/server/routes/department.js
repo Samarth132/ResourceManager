@@ -7,12 +7,12 @@ const {
     delDepartment
 } = require('../dbcontrollers/department.controller')
 
-router.get('/postDept',addDepartment)
+router.post('/postDept',addDepartment)
 
 router.get('/getDept',fetchDepartment)
 
-router.get('/putDept',upDepartment)
+router.put('/putDept',upDepartment)
 
-router.get('/delDept',delDepartment)
+router.delete('/delDept',delDepartment)
 
 module.exports = router

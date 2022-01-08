@@ -7,12 +7,12 @@ const {
     delResource
 } = require('../dbcontrollers/resource.controller')
 
-router.get('/postRes',addResource)
+router.post('/postRes',addResource)
 
 router.get('/getRes',fetchResource)
 
-router.get('/putRes',upResource)
+router.put('/putRes',upResource)
 
-router.get('/delRes',delResource)
+router.delete('/delRes',delResource)
 
 module.exports = router

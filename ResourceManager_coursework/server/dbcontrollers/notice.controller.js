@@ -11,7 +11,7 @@ async function addNotice(req,res){
         newNot = await pool.query('INSERT INTO notices (notId, deptId, notName, notLink, notDesc) VALUES($1,$2,$3,$4,$5)',
         [notId, deptId, notName, notLink, notDesc])
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(newNot){
@@ -25,7 +25,7 @@ async function fetchNotice(req,res){
     try {
         allNot = await pool.query('SELECT * FROM notices')
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(allNot){
@@ -40,7 +40,7 @@ async function upNotice(req,res){
     try {
         upNot = await pool.query(`UPDATE notices SET notName = ${notName} WHERE notId = ${notId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(upNot){
@@ -55,7 +55,7 @@ async function delNotice(req,res){
     try {
         delNot = await pool.query(`DELETE FROM notices WHERE notId = ${notId}`)
     } catch (err) {
-        console.log(err.message)
+        console.error(err.message)
         res.send(err.message)
     }
     if(delNot){

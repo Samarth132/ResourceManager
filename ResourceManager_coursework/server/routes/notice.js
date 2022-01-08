@@ -7,12 +7,12 @@ const {
     delNotice
 } = require('../dbcontrollers/notice.controller')
 
-router.get('/postNot',addNotice)
+router.post('/postNot',addNotice)
 
 router.get('/getNot',fetchNotice)
 
-router.get('/putNot',upNotice)
+router.put('/putNot',upNotice)
 
-router.get('/delNot',delNotice)
+router.delete('/delNot',delNotice)
 
 module.exports = router
