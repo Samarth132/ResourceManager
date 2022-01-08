@@ -1,3 +1,5 @@
+# ResourceManager
+
 ### Tables in DB
 
 DB Name : resourceManager
@@ -23,6 +25,3 @@ DB Type : Postgresql DB
 * Resources : Will contain links for all the e-resources associated with each semesters.
 
 * Notices : Will contain links for all the circulars / notices that are department specific.
-
-
-# ResourceManager
