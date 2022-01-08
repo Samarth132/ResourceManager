@@ -1,0 +1,19 @@
+{
+  "name": "ResourceManager_coursework",
+  "version": "1.0.0",
+  "description": "### Tables in DB",
+  "main": "index.js",
+  "scripts": {
+    "start": "node './server/main/app'",
+    "dev": "nodemon './server/main/app'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.1"
+  }
+}
