@@ -28,7 +28,7 @@ async function fetchDepartment(req,res){
         res.send(err.message)
     }
     if(allDept){
-        res.status(200).json(allDept)
+        res.status(200).json(allDept['rows'])
     }
 }
 
@@ -37,7 +37,7 @@ async function upDepartment(req,res){
     const {deptId, deptName} = req.body
     let upDept
     try {
-        upDept = await pool.query(`UPDATE departments SET deptName = ${deptName} WHERE deptId = ${deptId}`)
+        upDept = await pool.query("UPDATE departments SET deptName = $1 WHERE deptId = $2", [deptName, deptId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
@@ -52,13 +52,13 @@ async function delDepartment(req,res){
     const {deptId} = req.body
     let delDept
     try {
-        delDept = await pool.query(`DELETE FROM departments WHERE deptId = ${deptId}`)
+        delDept = await pool.query("DELETE FROM departments WHERE deptId = $1", [deptId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
     }
     if(delDept){
-        res.status(200).json(`${deptName} deleted successfully`)
+        res.status(200).json(`Department deleted successfully`)
     }
 }
 
