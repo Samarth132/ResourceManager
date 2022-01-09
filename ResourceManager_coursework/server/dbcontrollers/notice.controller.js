@@ -29,7 +29,7 @@ async function fetchNotice(req,res){
         res.send(err.message)
     }
     if(allNot){
-        res.status(200).json(allNot)
+        res.status(200).json(allNot['rows'])
     }
 }
 

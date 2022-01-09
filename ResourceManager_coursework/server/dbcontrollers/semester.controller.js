@@ -28,7 +28,7 @@ async function fetchSemester(req,res){
         res.send(err.message)
     }
     if(allSem){
-        res.status(200).json(allSem)
+        res.status(200).json(allSem['rows'])
     }
 }
 
