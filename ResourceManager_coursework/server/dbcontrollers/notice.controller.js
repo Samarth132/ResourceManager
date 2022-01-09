@@ -38,7 +38,7 @@ async function upNotice(req,res){
     const {notId, notName, } = req.body
     let upNot
     try {
-        upNot = await pool.query(`UPDATE notices SET notName = ${notName} WHERE notId = ${notId}`)
+        upNot = await pool.query("UPDATE notices SET notName = $1 WHERE notId = $2", [notName, notId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
@@ -53,13 +53,13 @@ async function delNotice(req,res){
     const {notId} = req.body
     let delNot
     try {
-        delNot = await pool.query(`DELETE FROM notices WHERE notId = ${notId}`)
+        delNot = await pool.query("DELETE FROM notices WHERE notId = $1", [notId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
     }
     if(delNot){
-        res.status(200).json(`${notName} deleted successfully`)
+        res.status(200).json(`notice deleted successfully`)
     }
 }
 

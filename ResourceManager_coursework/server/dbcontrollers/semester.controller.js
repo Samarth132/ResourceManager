@@ -37,7 +37,7 @@ async function upSemester(req,res){
     const {semId, semName} = req.body
     let upSem
     try {
-        upSem = await pool.query(`UPDATE semesters SET semName = ${semName} WHERE semId = ${semId}`)
+        upSem = await pool.query("UPDATE semesters SET semName = $1 WHERE semId = $2", [semName, semId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
@@ -52,13 +52,13 @@ async function delSemester(req,res){
     const {semId} = req.body
     let delSem
     try {
-        delSem = await pool.query(`DELETE FROM semesters WHERE semId = ${semId}`)
+        delSem = await pool.query("DELETE FROM semesters WHERE semId = $1", [semId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
     }
     if(delSem){
-        res.status(200).json(`${SemName} deleted successfully`)
+        res.status(200).json(`semester deleted successfully`)
     }
 }
 

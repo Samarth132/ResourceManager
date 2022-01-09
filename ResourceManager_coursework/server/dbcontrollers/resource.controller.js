@@ -38,7 +38,7 @@ async function upResource(req,res){
     const {resId, resName, } = req.body
     let upRes
     try {
-        upRes = await pool.query(`UPDATE resources SET resName = ${resName} WHERE resId = ${resId}`)
+        upRes = await pool.query("UPDATE resources SET resName = $1 WHERE resId = $2", [resName, resId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
@@ -53,13 +53,13 @@ async function delResource(req,res){
     const {resId} = req.body
     let delRes
     try {
-        delRes = await pool.query(`DELETE FROM resources WHERE resId = ${resId}`)
+        delRes = await pool.query("DELETE FROM resources WHERE resId = $1", [resId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
     }
     if(delRes){
-        res.status(200).json(`${resName} deleted successfully`)
+        res.status(200).json(`resource deleted successfully`)
     }
 }
 
