@@ -29,7 +29,7 @@ async function fetchResource(req,res){
         res.send(err.message)
     }
     if(allRes){
-        res.status(200).json(allres['rows'])
+        res.status(200).json(allRes['rows'])
     }
 }
 

@@ -7,7 +7,7 @@ const routes = {
     "/api/department" : 'department',
     "/api/notice" : 'notice',
     "/api/resource" : 'resource',
-    "api/semester" : 'semester'
+    "/api/semester" : 'semester'
 }
 
 let rt = Object.keys(routes)
