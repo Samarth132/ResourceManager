@@ -67,7 +67,10 @@ const Home = () => {
                         <Col lg={4} sm={12}>
                             <div className="credits border border-dark rounded-2 text-center py-3">
                                 <h4 className="heading border-bottom border-top border-dark">Credits</h4>
-                                <p className='para px-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab placeat quaerat hic necessitatibus adipisci ducimus sint ipsam accusantium repudiandae soluta.</p>
+                                <ul className='para px-2'>
+                                    <li><p>Developed by : Samarth Katti, Sayantani, Skanda B.K</p></li>
+                                    <li><p>Mentored by : M S Rakshitha</p></li>
+                                </ul>
                             </div>
                         </Col>
                     </Row>

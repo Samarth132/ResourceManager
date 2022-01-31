@@ -4,11 +4,11 @@ const {v1 : uuid} = require('uuid')
 //add Notice
 async function addNotice(req,res){
     const {notName, notLink, notDesc} = req.body
-    let deptId = uuid()
+    let deptId = req.body.deptId
     let notId = uuid()
     let newNot
     try {
-        newNot = await pool.query('INSERT INTO notices (notId, deptId, notName, notLink, notDesc) VALUES($1,$2,$3,$4,$5)',
+        newNot = await pool.query('INSERT INTO notices (noticeId, deptId, noticeName, noticeLink, noticeDesc) VALUES($1,$2,$3,$4,$5)',
         [notId, deptId, notName, notLink, notDesc])
     } catch (err) {
         console.error(err.message)

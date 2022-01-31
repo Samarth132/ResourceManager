@@ -13,7 +13,7 @@ const Navigation = () => {
                     <NavDropdown title="Documents" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/resources">Resources</NavDropdown.Item>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action/3.4">Notices</NavDropdown.Item>
+                    <NavDropdown.Item href="/notices">Notices</NavDropdown.Item>
                     </NavDropdown>
                 </Nav>
                 </Navbar.Collapse>
