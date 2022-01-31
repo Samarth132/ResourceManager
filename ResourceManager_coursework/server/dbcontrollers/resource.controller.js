@@ -33,6 +33,20 @@ async function fetchResource(req,res){
     }
 }
 
+async function fetchSemResource(req,res){
+    const {semId, resName, } = req.body
+    let allRes
+    try {
+        allRes = await pool.query("SELECT resName,resLink,resDesc FROM resources WHERE semId = $1", [semId])
+    } catch (err) {
+        console.error(err.message)
+        res.send(err.message)
+    }
+    if(allRes){
+        res.status(200).json(allRes['rows'])
+    }
+}
+
 //update resource
 async function upResource(req,res){
     const {resId, resName, } = req.body
@@ -66,6 +80,7 @@ async function delResource(req,res){
 module.exports = {
     addResource,
     fetchResource,
+    fetchSemResource,
     upResource,
     delResource
 }
