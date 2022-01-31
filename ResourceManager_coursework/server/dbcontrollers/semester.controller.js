@@ -4,8 +4,8 @@ const {v1 : uuid} = require('uuid')
 //add semester
 async function addSemester(req,res){
     const {semName} = req.body
-    let deptId = uuid()
-    let semId = uuid()
+    let deptId = req.body.deptId
+    let semId = req.body.semId
     let newSem
     try {
         newSem = await pool.query('INSERT INTO semesters (semId, deptId, semName) VALUES($1,$2,$3)', [semId, deptId, semName])

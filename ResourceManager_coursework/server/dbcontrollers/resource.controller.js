@@ -4,12 +4,12 @@ const {v1 : uuid} = require('uuid')
 //add resource
 async function addResource(req,res){
     const {resName, resLink, resDesc} = req.body
-    let deptId = uuid()
+    let semId = req.body.semId
     let resId = uuid()
     let newRes
     try {
-        newRes = await pool.query('INSERT INTO resources (resId, deptId, resName, resLink, resDesc) VALUES($1,$2,$3,$4,$5)',
-        [resId, deptId, resName, resLink, resDesc])
+        newRes = await pool.query('INSERT INTO resources (resId, semId, resName, resLink, resDesc) VALUES($1,$2,$3,$4,$5)',
+        [resId, semId, resName, resLink, resDesc])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
@@ -34,7 +34,7 @@ async function fetchResource(req,res){
 }
 
 async function fetchSemResource(req,res){
-    const {semId, resName, } = req.body
+    const semId = req.query.semId
     let allRes
     try {
         allRes = await pool.query("SELECT resName,resLink,resDesc FROM resources WHERE semId = $1", [semId])

@@ -9,9 +9,9 @@ const Home = () => {
                         <Row>
                             <Col lg={6} xs={12}>
                                 <div className='homeContent p-5'>
-                                    <h2 className="text-danger">Resource Manager</h2>
-                                    <p className="text-dark">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente a in eos, voluptatem tempore similique enim natus exercitationem ab totam impedit magni pariatur accusantium, voluptatum, sit officiis perferendis qui. Voluptas.
+                                    <h1 className="heading text-danger">Resource Management System</h1>
+                                    <p className="para text-dark">
+                                        Resource Management System is software developed for managing documents of IS department.
                                     </p>
                                 </div>
                             </Col>
@@ -23,23 +23,23 @@ const Home = () => {
                         </Row>
                 </Container>
             </div>
-            <div className="feature p-5 bg-danger border-0 rounded-3">
+            <div className="feature p-5 border-0 rounded-3">
                 <Container>
                         <Row>
                             <div className="outline border rounded-2 p-3">
                                 <div className='featureContent border rounded-2 p-5'>
-                                    <h2 className="text-white mb-3 ">Features</h2>
+                                    <h2 className="heading text-white mb-3 ">Features</h2>
                                     <div className="border rounded-2 border-white my-3 p-3 text-white">
-                                        <h4 className="border-bottom p-3 ps-0 border-white">Feature</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        <h4 className="heading border-bottom p-3 ps-0 border-white">Easy Access</h4>
+                                        <p className='para'>Students can gain access to all the resources in one place</p>
                                     </div>
                                     <div className="border rounded-2 border-white my-3 p-3 text-white">
-                                        <h4 className="border-bottom p-3 ps-0 border-white">Feature</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        <h4 className="heading border-bottom p-3 ps-0 border-white">Up to date</h4>
+                                        <p className='para'>Department documents will be updated through it</p>
                                     </div>
                                     <div className="border rounded-2 border-white my-3 p-3 text-white">
-                                        <h4 className="border-bottom p-3 ps-0 border-white">Feature</h4>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                                        <h4 className="heading border-bottom p-3 ps-0 border-white">Straightforward UI</h4>
+                                        <p className='para'>Offers a simple, to the point user interface</p>
                                     </div>
                                 </div>
                             </div>
@@ -51,20 +51,23 @@ const Home = () => {
                     <Row>
                         <Col lg={4} sm={12}>
                             <div className="about border border-dark rounded-2 text-center py-3">
-                                <h4 className="border-bottom border-top border-dark">About</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab placeat quaerat hic necessitatibus adipisci ducimus sint ipsam accusantium repudiandae soluta.</p>
+                                <h4 className="heading border-bottom border-top border-dark">About</h4>
+                                <p className='para px-2'>Resource management system is a course project develeoped by a team of students. It provides a simple implementation of RDBMS based applications.</p>
                             </div>
                         </Col>
                         <Col lg={4} sm={12}>
                             <div className="links border border-dark rounded-2 text-center py-3">
-                                <h4 className="border-bottom border-top border-dark">Links</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab placeat quaerat hic necessitatibus adipisci ducimus sint ipsam accusantium repudiandae soluta.</p>
+                                <h4 className="heading border-bottom border-top border-dark">Links</h4>
+                                <ul className='para px-2'>
+                                    <li><a href='http://libgen.is/'>Libgen</a></li>
+                                    <li><a href='https://github.com/Samarth132/ResourceManager/tree/main/ResourceManager_coursework'>Project Code</a></li>
+                                </ul>
                             </div>
                         </Col>
                         <Col lg={4} sm={12}>
                             <div className="credits border border-dark rounded-2 text-center py-3">
-                                <h4 className="border-bottom border-top border-dark">Credits</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab placeat quaerat hic necessitatibus adipisci ducimus sint ipsam accusantium repudiandae soluta.</p>
+                                <h4 className="heading border-bottom border-top border-dark">Credits</h4>
+                                <p className='para px-2'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab placeat quaerat hic necessitatibus adipisci ducimus sint ipsam accusantium repudiandae soluta.</p>
                             </div>
                         </Col>
                     </Row>
