@@ -28,3 +28,7 @@ CREATE TABLE Notices(
     FOREIGN KEY(deptId) REFERENCES Departments(deptId)
 );
 
+CREATE TABLE Users(
+    username VARCHAR(50) PRIMARY KEY,
+    password VARCHAR(255) NOT NULL
+);

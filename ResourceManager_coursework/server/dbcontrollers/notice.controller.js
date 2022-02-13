@@ -4,7 +4,7 @@ const {v1 : uuid} = require('uuid')
 //add Notice
 async function addNotice(req,res){
     const {notName, notLink, notDesc} = req.body
-    let deptId = req.body.deptId
+    let deptId = "99eb5910-705d-11ec-a1b1-d737bac4af6d"
     let notId = uuid()
     let newNot
     try {
@@ -53,7 +53,7 @@ async function delNotice(req,res){
     const {notId} = req.body
     let delNot
     try {
-        delNot = await pool.query("DELETE FROM notices WHERE notId = $1", [notId])
+        delNot = await pool.query("DELETE FROM notices WHERE noticeId = $1", [notId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)

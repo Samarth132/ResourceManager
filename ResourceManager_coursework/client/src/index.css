@@ -38,6 +38,12 @@ li > a {
 .resourceList {
   border: #374f75 3px solid;
 }
+.noticeList {
+  border: #374f75 3px solid;
+}
+.Create {
+  border: #374f75 3px solid;
+}
 .footer {
   background-color: #e7e7e7;
   min-height: 60vh;

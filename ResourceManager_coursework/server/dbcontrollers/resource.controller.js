@@ -49,10 +49,10 @@ async function fetchSemResource(req,res){
 
 //update resource
 async function upResource(req,res){
-    const {resId, resName, } = req.body
+    const {resId, resName, resDesc, resLink} = req.body
     let upRes
     try {
-        upRes = await pool.query("UPDATE resources SET resName = $1 WHERE resId = $2", [resName, resId])
+        upRes = await pool.query("UPDATE resources SET resName = $1, resDesc = $2, resLink = 3 WHERE resId = $4", [resName, resDesc, resLink, resId])
     } catch (err) {
         console.error(err.message)
         res.send(err.message)
