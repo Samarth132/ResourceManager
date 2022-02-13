@@ -1,5 +1,5 @@
 import { Container } from "react-bootstrap";
-import { Card, Button, Alert } from "react-bootstrap";
+import { Card, Button } from "react-bootstrap";
 import axios from "axios"
 import {useNavigate} from 'react-router-dom';
 import Cookie from 'universal-cookie';
@@ -18,13 +18,6 @@ const Logout = () => {
             cookie.remove('logValue', { path: '/' })
             navigate('/#home')
         }
-        return(
-            <>
-                <Alert variant="success">
-                    Logout Successful!
-                </Alert>
-            </>
-        )
     }
 
     return ( 

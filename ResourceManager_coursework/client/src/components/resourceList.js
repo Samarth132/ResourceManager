@@ -1,8 +1,9 @@
 import {Container} from 'react-bootstrap';
-import {Card, Accordion, Button, Form} from 'react-bootstrap';
+import {Card, Accordion, Button, Form, Row, Col} from 'react-bootstrap';
 import useFetch from './useFetch'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {CgSearch} from 'react-icons/cg'
 
 const ResourceList = () => {
     let {data:sem5} = useFetch('http://localhost:8000/api/resource/getSemRes?semId=5');
@@ -21,14 +22,14 @@ const ResourceList = () => {
 
     const handleFilter = (e) => {
         e.preventDefault();
-        if(filter === 'all'){
-            setSemester5(sem5);
-            setSemester6(sem6);
+        if(filter !== 'all'){
+            setSemester5(sem5.filter(filterElement));
+            setSemester6(sem6.filter(filterElement));
             navigate('/resources/#resource')
         }
         else{
-            setSemester5(sem5.filter(filterElement));
-            setSemester6(sem6.filter(filterElement));
+            setSemester5(sem5);
+            setSemester6(sem6);
             navigate('/resources/#resource')
         }
     }
@@ -38,12 +39,17 @@ const ResourceList = () => {
                     <div className="my-1 p-3 rounded-3">
                         <Form onSubmit={handleFilter}>
                             <Form.Group className="mb-3" controlId="formBasicRname">
-                                <Form.Label>Filter by Resource Name</Form.Label>
-                                <Form.Control type="text" placeholder="Enter name to filter elements" onChange={(e)=>setFilter(e.target.value)}/>
+                                <Row>
+                                    <Col lg={6} xs={12}>
+                                        <Form.Control type="text" placeholder='Enter search value' onChange={(e)=>setFilter(e.target.value)}/>
+                                    </Col>
+                                    <Col lg={6} xs={12}>
+                                        <Button variant="outline-primary" type="submit">
+                                            <CgSearch/>
+                                        </Button>
+                                    </Col>
+                                </Row>
                             </Form.Group>
-                            <Button variant="primary" type="submit">
-                                            Search
-                            </Button>
                         </Form>
                     </div>
                     <Accordion defaultActiveKey='0'>

@@ -44,6 +44,9 @@ li > a {
 .Create {
   border: #374f75 3px solid;
 }
+.login {
+  border: #374f75 3px solid;
+}
 .footer {
   background-color: #e7e7e7;
   min-height: 60vh;

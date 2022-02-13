@@ -1,8 +1,9 @@
 import { Container } from 'react-bootstrap';
-import {Card, Accordion, Button, Form} from 'react-bootstrap';
+import {Card, Accordion, Button, Form, Row, Col} from 'react-bootstrap';
 import useFetch from './useFetch'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import {CgSearch} from 'react-icons/cg'
 
 const NoticeList = () => {
     let {data:notices} = useFetch('http://localhost:8000/api/notice/getNot');
@@ -16,14 +17,19 @@ const NoticeList = () => {
         return item.noticename.toLowerCase().includes(filter.toLowerCase())
     }
 
+    if(filter.length === 0){
+        setFilteredNotices(notices);
+        navigate('/notices/#notice')
+    }
+
     const handleFilter = (e) => {
         e.preventDefault();
-        if(filter === 'all'){
-            setFilteredNotices(notices);
+        if(filter !== 'all'){
+            setFilteredNotices(notices.filter(filterElement));
             navigate('/notices/#notice')
         }
         else{
-            setFilteredNotices(notices.filter(filterElement));
+            setFilteredNotices(notices);
             navigate('/notices/#notice')
         }
     }
@@ -33,14 +39,19 @@ const NoticeList = () => {
             <div className="noticeList my-5 p-5 rounded-3">
             <div className="my-1 p-3 rounded-3">
                 <Form onSubmit={handleFilter}>
-                    <Form.Group className="mb-3" controlId="formBasicRname">
-                        <Form.Label>Filter by Notice Name</Form.Label>
-                        <Form.Control type="text" placeholder="Enter name to filter elements" onChange={(e)=>setFilter(e.target.value)}/>
-                    </Form.Group>
-                    <Button variant="primary" type="submit">
-                        Search
-                    </Button>
-                </Form>
+                            <Form.Group className="mb-3" controlId="formBasicRname">
+                                <Row>
+                                    <Col lg={6} xs={12}>
+                                        <Form.Control type="text" placeholder='Enter search value' onChange={(e)=>setFilter(e.target.value)}/>
+                                    </Col>
+                                    <Col lg={6} xs={12}>
+                                        <Button variant="outline-primary" type="submit">
+                                            <CgSearch/>
+                                        </Button>
+                                    </Col>
+                                </Row>
+                            </Form.Group>
+                        </Form>
             </div>
                 <Accordion defaultActiveKey='0'>
                     <Accordion.Item eventKey='0' id='#notice'>
