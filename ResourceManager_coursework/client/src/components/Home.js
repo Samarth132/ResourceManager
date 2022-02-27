@@ -9,9 +9,9 @@ const Home = () => {
                         <Row>
                             <Col lg={6} xs={12}>
                                 <div className='homeContent p-5'>
-                                    <h1 className="heading text-danger">Resource Management System</h1>
+                                    <h1 className="heading text-danger">Department Resource Management System</h1>
                                     <p className="para text-dark">
-                                        Resource Management System is software developed for managing documents of IS department.
+                                    Department Resource Management System is software developed for managing documents of IS department.
                                     </p>
                                 </div>
                             </Col>
@@ -68,7 +68,10 @@ const Home = () => {
                             <div className="credits border border-dark rounded-2 text-center py-3">
                                 <h4 className="heading border-bottom border-top border-dark">Credits</h4>
                                 <ul className='para px-2'>
-                                    <li><p>Developed by : Samarth Katti, Sayantani, Skanda B.K</p></li>
+                                    <li><p>Developed by : </p></li>
+                                    <li><p>Samarth Katti</p></li>
+                                    <li><p>S.K Sayantani</p></li>
+                                    <li><p>Skanda B.K</p></li>
                                     <li><p>Mentored by : M S Rakshitha</p></li>
                                 </ul>
                             </div>

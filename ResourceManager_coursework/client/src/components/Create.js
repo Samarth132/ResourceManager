@@ -63,10 +63,10 @@ const Create = () => {
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicRdesc">
                                         <Form.Label>Resource description</Form.Label>
-                                        <Form.Control type="text" placeholder="Enter description" onChange={(e)=>setResDesc(e.target.value)}/>
+                                        <Form.Control as="textarea" rows={5} placeholder="Enter description" onChange={(e)=>setResDesc(e.target.value)}/>
                                     </Form.Group><Form.Group className="mb-3" controlId="formBasicRlink">
                                         <Form.Label>Resource link</Form.Label>
-                                        <Form.Control as="textarea" rows={5} placeholder="Enter link" onChange={(e)=>setResLink(e.target.value)}/>
+                                        <Form.Control type="text" placeholder="Enter link" onChange={(e)=>setResLink(e.target.value)}/>
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formBasicRsem">
                                         <Form.Label>Semester</Form.Label>
