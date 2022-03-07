@@ -32,3 +32,23 @@ CREATE TABLE Users(
     username VARCHAR(50) PRIMARY KEY,
     password VARCHAR(255) NOT NULL
 );
+
+//PostgreSQL commands
+
+    //user
+    sudo -u samarth psql 
+
+    //show databases
+    \l
+
+    //connection info
+    \conninfo
+
+    //display table
+    \dt 
+
+    //connect to db 
+    \c dbname
+
+    //describe table
+    select * from information_schema.columns where table_name = 'tablename';
